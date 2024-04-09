@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Mi extension chrome",
+  "version": "1.0",
+  "description": "just havin fun",
+  "icons": {
+    "128": "extension.png"
+  },
+
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
