@@ -35,6 +35,7 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
   alert(`enviando ${focus}, ${session} y ${rest}`);
 });
 
+let alarm = new Audio("alarm.mp3");
 //ACTIVAR TIMER
 boton.addEventListener("click", () => {
   const container = document.getElementById("formContiner");
@@ -53,6 +54,9 @@ boton.addEventListener("click", () => {
     const startSegundos = () => {
       const segundosBack = setInterval(() => {
         segundos--;
+        if (segundos < 10) {
+          segundosTimer.textContent = `0${segundos}`;
+        }
         segundosTimer.textContent = segundos;
         if (segundos === 0) {
           clearInterval(segundosBack);
@@ -65,29 +69,36 @@ boton.addEventListener("click", () => {
       if (lapse < session) {
         timer--;
         lapse++;
+        if (timer < 10) {
+          minutosTimer.textContent = `0${timer - 1}`;
+        }
         minutosTimer.textContent = timer - 1;
         startSegundos();
       } else {
-        Swal.fire("SESSION COMPLETA!");
+        /* Swal.fire("SESSION COMPLETA!"); */
+        alarm.play();
         clearInterval(restInterval);
         minutosTimer.textContent = 0;
+        alert("COMPLETA");
       }
 
       if (timer === 0) {
         clearInterval(focusInterval);
         if (lapse < session) {
-          Swal.fire({
+          /* Swal.fire({
             position: "top-end",
             icon: "success",
             title: "DESCANSO!",
             showConfirmButton: false,
             timer: 1000,
-          });
+          }); */
           RestTimer(rest);
+          alert("Descanso");
         } else {
-          Swal.fire("SESSION COMPLETA!");
+          /* Swal.fire("SESSION COMPLETA!"); */
           container.classList.remove("esconder");
           temporizador.classList.add("esconder");
+          alert("COMPLETA");
         }
       }
     }, 60000);
@@ -112,26 +123,29 @@ boton.addEventListener("click", () => {
         lapse++;
         temporizador.textContent = timer;
       } else {
-        Swal.fire("SESSION COMPLETA!");
+        /* Swal.fire("SESSION COMPLETA!"); */
         clearInterval(restInterval);
         minutosTimer.textContent = 0;
+        alert("COMPLETA");
       }
 
       if (timer === 0) {
         clearInterval(restInterval);
         if (lapse < session) {
           FocusTimer(focus);
-          Swal.fire({
+          /* Swal.fire({
             position: "top-end",
             icon: "success",
             title: "a trabajar!",
             showConfirmButton: false,
             timer: 1000,
-          });
+          }); */
+          alert("A TRABAJAR");
         } else {
-          Swal.fire("SESSION COMPLETA!");
+          /* Swal.fire("SESSION COMPLETA!"); */
           container.classList.remove("esconder");
           temporizador.classList.add("esconder");
+          alert("COMPLETA");
         }
       }
     }, 60000);
