@@ -1,22 +1,43 @@
-
-
 body {
-    background-color: black;
-    color: white;
-    display: flex;
-    justify-content: center;
-    font-size: 24px;
-  }
+  scale: 70%;
 
-  .esconder {
-    display: none;
-  }
+  background-color: rgb(46, 142, 233);
+  color: white;
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+}
 
-  .custom-alert-size {
-    scale: 50%;
-    
-  }
+.esconder {
+  display: none;
+}
 
-  .form-style {
-    scale: 50%;
-  }
+.custom-alert-size {
+  scale: 50%;
+}
+input {
+  width: 90%;
+}
+label {
+  font-family: "Share Tech Mono", monospace;
+  font-size: 14px;
+}
+.form-style {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+}
+
+
+
+.form-button {
+  color: aliceblue;
+  background-color: black;
+  margin-top: 0.5rem;
+  font-family: "Share Tech Mono", monospace;
+  width: 90%;
+}

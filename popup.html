@@ -4,27 +4,37 @@
     <link rel="stylesheet" href="styles.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
+    />
     <title>Document</title>
     <style></style>
   </head>
   <body>
-    <div id="formContiner">
+    <div class="" id="form-container">
       <form id="myForm" action="" class="form-style">
-        <label for="sessionInput">Session Duration</label>
-        <input type="number" name="sessionInput" id="sessionInput" />
-        <label for="focusInput">Focus Time</label>
-        <input type="number" name="focusInput" id="focusInput" />
-        <label for="restInput">Rest time</label>
-        <input type="number" name="restInput" id="restInput" />
-        <button type="submit">Enviar</button>
+        <div class="form-box">
+          <label for="sessionInput">Session Duration</label>
+          <input required type="number" name="sessionInput" id="sessionInput" />
+        </div>
+        <div>
+          <label for="focusInput">Focus Time</label>
+          <input required type="number" name="focusInput" id="focusInput" />
+        </div>
+        <div>
+          <label for="restInput">Rest time</label>
+          <input required type="number" name="restInput" id="restInput" />
+        </div>
+        <button class="form-button" type="submit">Enviar</button>
       </form>
     </div>
     <p id="temporizador">
       <span id="minutos"></span>:<span id="segundos"></span>
     </p>
-    <button id="start-timer" class="esconder">START TIMER</button>
+    <button id="start-timer" class="esconder form-button">START TIMER</button>
     <script type="module" src="/popup.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
   </body>
